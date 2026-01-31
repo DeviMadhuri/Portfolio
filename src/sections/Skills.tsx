@@ -7,8 +7,7 @@ import {
   Server, 
   Layers, 
   Workflow, 
-  Code2, 
-  Wrench 
+  Code2
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
