@@ -2,7 +2,7 @@
 
 A stunning, modern portfolio website for an AWS Data Engineer. Built with React, TypeScript, Tailwind CSS, and GSAP animations.
 
-![Portfolio Preview](public/profile.jpg)
+![Portfolio Preview](src/assets/profile.jpg)
 
 ## 🚀 Live Demo
 
