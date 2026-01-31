@@ -20,7 +20,7 @@ const projects = [
     title: 'Real-Time Data Pipeline',
     description: 'Implemented real-time streaming pipeline with Kafka and Spark Streaming, enabling sub-second analytics for business operations and fraud detection.',
     tech: ['Kafka', 'Spark Streaming', 'DynamoDB', 'Lambda'],
-    image: '/project-2.jpg',
+    image: `${import.meta.env.BASE_URL}project-2.jpg`,
     link: '#',
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     title: 'Infrastructure Automation',
     description: 'Designed Terraform modules for consistent AWS infrastructure deployment across 15+ environments, reducing provisioning time by 80% and ensuring compliance.',
     tech: ['Terraform', 'CloudFormation', 'CodePipeline', 'Docker'],
-    image: '/project-3.jpg',
+      image: `${import.meta.env.BASE_URL}project-3.jpg`,
     link: '#',
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     title: 'Data Lake Architecture',
     description: 'Architected enterprise data lake on S3 with partitioned storage, enabling petabyte-scale analytics with Athena and EMR for data science teams.',
     tech: ['S3', 'Athena', 'EMR', 'Glue Catalog', 'Parquet'],
-    image: '/project-4.jpg',
+      image: `${import.meta.env.BASE_URL}project-4.jpg`,
     link: '#',
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     title: 'ML Data Pipeline',
     description: 'Built automated ML data pipeline for feature engineering and model training, reducing model deployment time from weeks to days with SageMaker integration.',
     tech: ['SageMaker', 'Step Functions', 'Lambda', 'S3'],
-    image: '/project-5.jpg',
+      image: `${import.meta.env.BASE_URL}project-5.jpg`,
     link: '#',
   },
 ];
