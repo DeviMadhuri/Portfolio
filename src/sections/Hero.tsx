@@ -244,9 +244,9 @@ const Hero = () => {
               ref={descRef}
               className="text-base sm:text-lg text-gray-500 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
-              Crafting scalable data pipelines and cloud-native solutions that transform 
-              raw data into actionable intelligence. 5+ years building enterprise-grade 
-              ETL systems.
+              Crafting reliable systems and thoughtful solutions with a focus on clarity,
+              ownership, and long-term impact. Over 5 years of experience building and maintaining
+              software that scales with real-world demands.
             </p>
 
             {/* CTA Buttons */}
