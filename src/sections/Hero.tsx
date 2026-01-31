@@ -295,7 +295,7 @@ const Hero = () => {
               {/* Image Container */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden glow-white animate-float-slow">
                 <img
-                  src="../assets/Profile-pic.jpg"
+                  src="src/assets/Profile-pic.jpg"
                   alt="Devi Madhuri"
                   className="w-full h-full object-cover"
                 />
