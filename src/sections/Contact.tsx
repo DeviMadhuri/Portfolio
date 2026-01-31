@@ -176,7 +176,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Location</p>
-                  <span className="text-white">Greater Chicago Area</span>
+                  <span className="text-white">Chicago, IL</span>
                 </div>
               </div>
 
@@ -186,7 +186,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Availability</p>
-                  <span className="text-white">Open to freelance & full-time opportunities</span>
+                  <span className="text-white">Open to full-time opportunities</span>
                 </div>
               </div>
             </div>

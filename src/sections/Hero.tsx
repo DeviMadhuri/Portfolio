@@ -236,7 +236,7 @@ const Hero = () => {
               ref={titleRef}
               className="text-xl sm:text-2xl text-gray-400 mb-6 tracking-wide"
             >
-              AWS Data Engineer
+              Data Engineer
             </p>
 
             {/* Description */}

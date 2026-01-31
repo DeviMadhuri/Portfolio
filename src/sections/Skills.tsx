@@ -17,7 +17,7 @@ const skillCategories = [
   {
     icon: Cloud,
     title: 'Cloud Platforms',
-    skills: ['AWS', 'S3', 'EC2', 'Lambda', 'Glue', 'Redshift', 'EMR', 'Step Functions', 'DynamoDB'],
+    skills: ['AWS', 'S3', 'EC2', 'Lambda', 'Glue', 'Redshift', 'EMR', 'Step Functions', 'DynamoDB', 'EC2' ],
     color: 'from-orange-500/20 to-yellow-500/20',
   },
   {
@@ -29,7 +29,7 @@ const skillCategories = [
   {
     icon: Server,
     title: 'Infrastructure',
-    skills: ['Terraform', 'CloudFormation', 'Docker', 'Kubernetes', 'CI/CD Pipelines'],
+    skills: ['Terraform/Open Tofu', 'CloudFormation', 'Docker', 'Kubernetes', 'CI/CD Pipelines'],
     color: 'from-green-500/20 to-emerald-500/20',
   },
   {
@@ -46,15 +46,9 @@ const skillCategories = [
   },
   {
     icon: Code2,
-    title: 'Languages',
+    title: 'Languages & Tools',
     skills: ['Python', 'SQL', 'Bash/Shell', 'Scala'],
     color: 'from-indigo-500/20 to-blue-500/20',
-  },
-  {
-    icon: Wrench,
-    title: 'Tools',
-    skills: ['Git/GitHub', 'Jupyter', 'Apache Kafka', 'Amazon Kinesis', 'Data Visualization'],
-    color: 'from-teal-500/20 to-green-500/20',
   },
 ];
 
