@@ -154,7 +154,7 @@ const Contact = () => {
                 <div className="flex-1">
                   <p className="text-sm text-gray-500 mb-1">Email</p>
                   <div className="flex items-center gap-2">
-                    <span className="text-white">devi.madhuri@email.com</span>
+                    <span className="text-white">devimadhuri1205@gmail.com</span>
                     <button
                       onClick={handleCopyEmail}
                       className="p-1.5 rounded-lg hover:bg-white/10 transition-colors"

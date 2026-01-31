@@ -219,8 +219,8 @@ const Projects = () => {
                       href={project.link}
                       className="inline-flex items-center gap-2 text-white text-sm hover:text-gray-300 transition-colors group/link"
                     >
-                      View Case Study
-                      <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                      {/*View Case Study*/}
+                      {/*<ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />*/}
                     </a>
                   </div>
                 </div>

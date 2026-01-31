@@ -148,10 +148,10 @@ const About = () => {
               <h3 className="text-xl font-medium text-white">Who I Am</h3>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              I'm Devi Madhuri, an AWS Data Engineer with 5 years of experience crafting 
-              enterprise-grade data solutions. Currently at State Farm, I specialize in 
-              building scalable ETL pipelines, cloud infrastructure automation, and 
-              transforming complex data into actionable business intelligence.
+              I'm Devi Madhuri, an Data Engineer with 5+ years of experience designing and operating
+              large-scale data platforms on AWS. I specialize in building resilient ETL pipelines,
+              cloud-native data architectures, and automation-driven workflows that support analytics
+              at enterprise scale.
             </p>
           </div>
 
