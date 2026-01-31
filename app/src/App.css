@@ -1,0 +1,67 @@
+/* App-specific styles */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure full-width sections */
+section {
+  width: 100%;
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom focus styles */
+*:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Prevent text selection on interactive elements */
+button,
+a {
+  user-select: none;
+}
+
+/* Image loading placeholder */
+img {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Ensure proper z-index stacking */
+.particle-canvas {
+  z-index: 0;
+}
+
+nav {
+  z-index: 50;
+}
+
+/* Mobile menu backdrop blur */
+@media (max-width: 768px) {
+  .mobile-menu-backdrop {
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* GPU acceleration for animated elements */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
