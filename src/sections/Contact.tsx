@@ -204,19 +204,13 @@ const Contact = () => {
                   <Linkedin className="w-5 h-5 text-white" />
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/DeviMadhuri"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center hover:bg-white/10 hover:scale-110 transition-all duration-300"
                 >
                   <Github className="w-5 h-5 text-white" />
                 </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center hover:bg-white/10 hover:scale-110 transition-all duration-300"
-                >
                   <Twitter className="w-5 h-5 text-white" />
                 </a>
               </div>
