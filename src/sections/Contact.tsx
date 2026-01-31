@@ -211,8 +211,6 @@ const Contact = () => {
                 >
                   <Github className="w-5 h-5 text-white" />
                 </a>
-                  <Twitter className="w-5 h-5 text-white" />
-                </a>
               </div>
             </div>
           </div>
