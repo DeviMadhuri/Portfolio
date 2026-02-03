@@ -12,7 +12,7 @@ const projects = [
     title: 'Enterprise ETL Platform',
     description: 'Built a scalable ETL platform processing 10TB+ daily using AWS Glue, PySpark, and Airflow. Reduced processing time by 60% through optimized partitioning and parallel execution.',
     tech: ['AWS Glue', 'PySpark', 'Airflow', 'S3', 'Redshift'],
-    image: '../assets/project-1.jpg',
+    image:  `${import.meta.env.BASE_URL}project-1.jpg`,
     link: '#',
   },
   {
