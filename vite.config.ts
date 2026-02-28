@@ -1,15 +1,13 @@
-import path from "path"
-import react from "@vitejs/plugin-react"
-import { defineConfig } from "vite"
-import { inspectAttr } from 'kimi-plugin-inspect-react'
+import path from "path";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 
-// https://vite.dev/config/
 export default defineConfig({
-  base: '/Portfolio/',
-  plugins: [inspectAttr(), react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+    plugins: [react()],
+    base: '/Portfolio/', // Important for GitHub Pages
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "./src"),
+        },
     },
-  },
 });

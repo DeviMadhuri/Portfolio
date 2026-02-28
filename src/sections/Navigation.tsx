@@ -1,170 +1,84 @@
-import { useEffect, useState, useRef } from 'react';
-import { gsap } from 'gsap';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const navItems = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Hobbies', href: '#hobbies' },
-    { label: 'Contact', href: '#contact' },
-];
-
-const Navigation = () => {
+export function Navigation() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState('hero');
-    const navRef = useRef<HTMLElement>(null);
-    const mobileMenuRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 100);
-
-            // Determine active section
-            const sections = navItems.map((item) => item.href.slice(1));
-            for (const section of sections.reverse()) {
-                const element = document.getElementById(section);
-                if (element) {
-                    const rect = element.getBoundingClientRect();
-                    if (rect.top <= 150) {
-                        setActiveSection(section);
-                        break;
-                    }
-                }
-            }
+            setIsScrolled(window.scrollY > 50);
         };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    useEffect(() => {
-        // Entrance animation
-        gsap.fromTo(
-            navRef.current,
-            { y: -100, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.8, ease: 'expo.out', delay: 1.5 }
-        );
-    }, []);
-
-    useEffect(() => {
-        // Mobile menu animation
-        if (mobileMenuRef.current) {
-            if (isMobileMenuOpen) {
-                gsap.fromTo(
-                    mobileMenuRef.current,
-                    { opacity: 0, y: -20 },
-                    { opacity: 1, y: 0, duration: 0.3, ease: 'expo.out' }
-                );
-                gsap.fromTo(
-                    mobileMenuRef.current.querySelectorAll('a'),
-                    { x: -20, opacity: 0 },
-                    { x: 0, opacity: 1, duration: 0.3, stagger: 0.05, ease: 'expo.out', delay: 0.1 }
-                );
-            }
-        }
-    }, [isMobileMenuOpen]);
-
-    const scrollToSection = (href: string) => {
-        const element = document.querySelector(href);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-        setIsMobileMenuOpen(false);
-    };
+    const navLinks = [
+        { href: '#about', label: 'About' },
+        { href: '#skills', label: 'Skills' },
+        { href: '#projects', label: 'Projects' },
+        { href: '#experience', label: 'Experience' },
+        { href: '#contact', label: 'Contact' },
+    ];
 
     return (
-        <>
-            <nav
-                ref={navRef}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-                    isScrolled
-                        ? 'bg-black/80 backdrop-blur-lg border-b border-white/10'
-                        : 'bg-transparent'
-                }`}
-            >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-16">
-                        {/* Logo */}
-                        <button
-                            onClick={() => scrollToSection('#hero')}
-                            className="text-xl font-light text-white hover:opacity-80 transition-opacity"
-                            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                        >
-                            DM
-                        </button>
+        <nav
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+                isScrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-slate-800' : 'bg-transparent'
+            }`}
+        >
+            <div className="container mx-auto px-4">
+                <div className="flex items-center justify-between h-20">
+                    <a href="#" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">
+                        DM.
+                    </a>
 
-                        {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center gap-1">
-                            {navItems.map((item) => (
-                                <button
-                                    key={item.href}
-                                    onClick={() => scrollToSection(item.href)}
-                                    className={`px-4 py-2 text-sm transition-all duration-300 rounded-lg ${
-                                        activeSection === item.href.slice(1)
-                                            ? 'text-white bg-white/10'
-                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
-                                    }`}
-                                >
-                                    {item.label}
-                                </button>
-                            ))}
-                        </div>
-
-                        {/* Mobile Menu Button */}
+                    <div className="hidden md:flex items-center gap-8">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                className="text-sm text-slate-400 hover:text-white transition-colors relative group"
+                            >
+                                {link.label}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full" />
+                            </a>
+                        ))}
                         <Button
-                            variant="ghost"
-                            size="icon"
-                            className="md:hidden text-white hover:bg-white/10"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            size="sm"
+                            className="bg-indigo-600 hover:bg-indigo-700 text-white"
+                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                         >
-                            {isMobileMenuOpen ? (
-                                <X className="w-5 h-5" />
-                            ) : (
-                                <Menu className="w-5 h-5" />
-                            )}
+                            Hire Me
                         </Button>
                     </div>
+
+                    <button
+                        className="md:hidden text-slate-400 hover:text-white"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
                 </div>
-            </nav>
 
-            {/* Mobile Menu */}
-            {isMobileMenuOpen && (
-                <div
-                    ref={mobileMenuRef}
-                    className="fixed inset-0 z-40 md:hidden"
-                >
-                    {/* Backdrop */}
-                    <div
-                        className="absolute inset-0 bg-black/90 backdrop-blur-lg"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    />
-
-                    {/* Menu Content */}
-                    <div className="relative flex flex-col items-center justify-center h-full gap-6">
-                        {navItems.map((item) => (
-                            <button
-                                key={item.href}
-                                onClick={() => scrollToSection(item.href)}
-                                className={`text-2xl font-light transition-all duration-300 ${
-                                    activeSection === item.href.slice(1)
-                                        ? 'text-white'
-                                        : 'text-gray-400 hover:text-white'
-                                }`}
-                                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                            >
-                                {item.label}
-                            </button>
-                        ))}
+                {isMobileMenuOpen && (
+                    <div className="md:hidden py-4 border-t border-slate-800">
+                        <div className="flex flex-col gap-4">
+                            {navLinks.map((link) => (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    className="text-slate-400 hover:text-white transition-colors"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    {link.label}
+                                </a>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            )}
-        </>
+                )}
+            </div>
+        </nav>
     );
-};
-
-export default Navigation;
+}

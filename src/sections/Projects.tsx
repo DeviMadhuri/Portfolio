@@ -1,262 +1,157 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ExternalLink, Github } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projects = [
-  {
-    id: 1,
-    title: 'Enterprise ETL Platform',
-    description: 'Built a scalable ETL platform processing 10TB+ daily using AWS Glue, PySpark, and Airflow. Reduced processing time by 60% through optimized partitioning and parallel execution.',
-    tech: ['AWS Glue', 'PySpark', 'Airflow', 'S3', 'Redshift'],
-    image:  `${import.meta.env.BASE_URL}project-1.jpg`,
-    link: '#',
-  },
-  {
-    id: 2,
-    title: 'Real-Time Data Pipeline',
-    description: 'Implemented real-time streaming pipeline with Kafka and Spark Streaming, enabling sub-second analytics for business operations and fraud detection.',
-    tech: ['Kafka', 'Spark Streaming', 'DynamoDB', 'Lambda'],
-    image: `${import.meta.env.BASE_URL}project-2.jpg`,
-    link: '#',
-  },
-  {
-    id: 3,
-    title: 'Infrastructure Automation',
-    description: 'Designed Terraform modules for consistent AWS infrastructure deployment across 15+ environments, reducing provisioning time by 80% and ensuring compliance.',
-    tech: ['Terraform', 'CloudFormation', 'CodePipeline', 'Docker'],
-      image: `${import.meta.env.BASE_URL}project-3.jpg`,
-    link: '#',
-  },
-  {
-    id: 4,
-    title: 'Data Lake Architecture',
-    description: 'Architected enterprise data lake on S3 with partitioned storage, enabling petabyte-scale analytics with Athena and EMR for data science teams.',
-    tech: ['S3', 'Athena', 'EMR', 'Glue Catalog', 'Parquet'],
-      image: `${import.meta.env.BASE_URL}project-4.jpg`,
-    link: '#',
-  },
-  {
-    id: 5,
-    title: 'ML Data Pipeline',
-    description: 'Built automated ML data pipeline for feature engineering and model training, reducing model deployment time from weeks to days with SageMaker integration.',
-    tech: ['SageMaker', 'Step Functions', 'Lambda', 'S3'],
-      image: `${import.meta.env.BASE_URL}project-5.jpg`,
-    link: '#',
-  },
-];
+export function Projects() {
+    const sectionRef = useRef<HTMLDivElement>(null);
 
-const Projects = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(2);
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.from('.project-card', {
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top 80%',
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2
+            });
+        }, sectionRef);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Title typewriter effect
-      gsap.fromTo(
-        titleRef.current,
-        { opacity: 0, y: 30 },
+        return () => ctx.revert();
+    }, []);
+
+    const projects = [
         {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // Carousel entrance
-      gsap.fromTo(
-        carouselRef.current,
-        { opacity: 0, perspective: 500 },
+            title: 'RAG Pipeline on AWS Bedrock',
+            description: 'Built production RAG system using Amazon Bedrock and SageMaker, connected to live S3 and Redshift streams. Delivers real-time, context-aware insights to analytics teams using production data.',
+            image: 'bg-gradient-to-br from-pink-600 to-purple-600',
+            tags: ['Bedrock', 'SageMaker', 'Python', 'Redshift', 'RAG'],
+            metrics: 'Real-time Gen AI insights from production data',
+            github: '#',
+            demo: '#'
+        },
         {
-          opacity: 1,
-          perspective: 1500,
-          duration: 0.6,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: carouselRef.current,
-            start: 'top 75%',
-            toggleActions: 'play none none reverse',
-          },
+            title: 'Apache Iceberg Data Lakehouse',
+            description: 'Migrated S3 storage to Apache Iceberg tables enabling schema evolution and time-travel queries without pipeline rewrites. Implemented Starburst as federated query engine.',
+            image: 'bg-gradient-to-br from-blue-600 to-cyan-600',
+            tags: ['Apache Iceberg', 'Starburst', 'S3', 'PySpark', 'Lakehouse'],
+            metrics: '20% reduction in cross-source query time',
+            github: '#',
+            demo: '#'
+        },
+        {
+            title: 'Great Expectations Data Quality',
+            description: 'Built comprehensive data quality layer using Great Expectations with validation rules, lineage tracking, and Splunk alerting across ingestion and transformation stages.',
+            image: 'bg-gradient-to-br from-green-600 to-emerald-600',
+            tags: ['Great Expectations', 'Python', 'Airflow', 'Splunk', 'Data Quality'],
+            metrics: 'Issues caught upstream before reaching dashboards',
+            github: '#',
+            demo: '#'
+        },
+        {
+            title: 'dbt Analytics Transformation',
+            description: 'Centralized business logic using dbt transformation models with version control and documentation. Served clean datasets via Flask REST APIs to Tableau dashboards.',
+            image: 'bg-gradient-to-br from-orange-600 to-red-600',
+            tags: ['dbt', 'Redshift', 'Flask', 'Tableau', 'SQL'],
+            metrics: '40% reduction in ad-hoc SQL requests from analysts',
+            github: '#',
+            demo: '#'
+        },
+        {
+            title: 'Real-Time Streaming Architecture',
+            description: 'Implemented Kafka and Spark Structured Streaming for real-time data processing. Integrated with DynamoDB and Cassandra for low-latency access patterns.',
+            image: 'bg-gradient-to-br from-yellow-600 to-orange-600',
+            tags: ['Kafka', 'Spark Streaming', 'DynamoDB', 'Cassandra', 'Python'],
+            metrics: 'Sub-second latency for critical data pipelines',
+            github: '#',
+            demo: '#'
+        },
+        {
+            title: 'Terraform Infrastructure Automation',
+            description: 'Built reusable Terraform modules for multi-environment AWS infrastructure. Implemented OpenTofu for cost-effective infrastructure management with automated compliance checks.',
+            image: 'bg-gradient-to-br from-purple-600 to-indigo-600',
+            tags: ['Terraform', 'OpenTofu', 'AWS', 'CI/CD', 'DevOps'],
+            metrics: 'Infrastructure deployment time reduced by 35%',
+            github: '#',
+            demo: '#'
         }
-      );
-    }, sectionRef);
+    ];
 
-    return () => ctx.revert();
-  }, []);
-
-  const navigate = (direction: 'prev' | 'next') => {
-    if (direction === 'prev') {
-      setActiveIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
-    } else {
-      setActiveIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-    }
-  };
-
-  const getCardStyle = (index: number) => {
-    const diff = index - activeIndex;
-    const normalizedDiff = ((diff + projects.length + Math.floor(projects.length / 2)) % projects.length) - Math.floor(projects.length / 2);
-    
-    const rotateY = normalizedDiff * 25;
-    const translateZ = Math.abs(normalizedDiff) * -120;
-    const translateX = normalizedDiff * 320;
-    const opacity = Math.abs(normalizedDiff) > 2 ? 0 : 1 - Math.abs(normalizedDiff) * 0.3;
-    const scale = 1 - Math.abs(normalizedDiff) * 0.1;
-
-    return {
-      transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
-      opacity,
-      zIndex: 10 - Math.abs(normalizedDiff),
-    };
-  };
-
-  return (
-    <section
-      ref={sectionRef}
-      id="projects"
-      className="relative min-h-screen w-full py-24 overflow-hidden"
-    >
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2
-            ref={titleRef}
-            className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-4"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-          >
-            Featured Projects
-          </h2>
-          <p className="text-gray-500 text-lg">Data Engineering Excellence in Action</p>
-        </div>
-
-        {/* 3D Carousel */}
-        <div
-          ref={carouselRef}
-          className="relative h-[500px] sm:h-[550px] flex items-center justify-center"
-          style={{ perspective: '1500px' }}
-        >
-          {/* Navigation Buttons */}
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => navigate('prev')}
-            className="absolute left-0 sm:left-4 z-20 bg-black/50 border-white/20 hover:bg-white/10 hover:border-white/40"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => navigate('next')}
-            className="absolute right-0 sm:right-4 z-20 bg-black/50 border-white/20 hover:bg-white/10 hover:border-white/40"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </Button>
-
-          {/* Cards Container */}
-          <div
-            className="relative w-full max-w-md"
-            style={{ transformStyle: 'preserve-3d' }}
-          >
-            {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm"
-                style={{
-                  ...getCardStyle(index),
-                  transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                  transformStyle: 'preserve-3d',
-                }}
-              >
-                <div
-                  className={`glass rounded-2xl overflow-hidden transition-all duration-500 ${
-                    index === activeIndex ? 'ring-2 ring-white/30 shadow-2xl' : ''
-                  }`}
-                >
-                  {/* Project Image */}
-                  <div className="relative h-48 sm:h-56 overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  </div>
-
-                  {/* Project Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-medium text-white mb-3">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
-                      {project.description}
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-1 text-xs bg-white/10 text-gray-300 rounded"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+    return (
+        <section ref={sectionRef} id="projects" className="py-32 bg-slate-950">
+            <div className="container mx-auto px-4">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-sm font-semibold text-indigo-500 uppercase tracking-wider mb-4">
+                            Portfolio
+                        </h2>
+                        <h3 className="text-4xl font-bold text-white mb-4">Featured Projects</h3>
+                        <p className="text-slate-400 max-w-2xl mx-auto">
+                            Real-world data engineering solutions delivering measurable business value across cloud infrastructure, Gen AI, and data lakehouse architectures.
+                        </p>
                     </div>
 
-                    {/* View Project Link */}
-                    <a
-                      href={project.link}
-                      className="inline-flex items-center gap-2 text-white text-sm hover:text-gray-300 transition-colors group/link"
-                    >
-                      {/*View Case Study*/}
-                      {/*<ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />*/}
-                    </a>
-                  </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {projects.map((project, index) => (
+                            <div
+                                key={index}
+                                className="project-card group rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-indigo-500/30 transition-all duration-300"
+                            >
+                                <div className={`h-48 ${project.image} relative overflow-hidden`}>
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                                    <div className="absolute bottom-4 left-4">
+                    <span className="px-3 py-1 rounded-full bg-black/30 backdrop-blur-md border border-white/10 text-xs font-medium text-white">
+                      {project.metrics}
+                    </span>
+                                    </div>
+                                </div>
+
+                                <div className="p-6">
+                                    <h4 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                                        {project.title}
+                                    </h4>
+                                    <p className="text-slate-400 text-sm mb-4 line-clamp-3">
+                                        {project.description}
+                                    </p>
+
+                                    <div className="flex flex-wrap gap-2 mb-6">
+                                        {project.tags.map((tag, i) => (
+                                            <span
+                                                key={i}
+                                                className="px-2 py-1 rounded bg-slate-800 text-xs text-slate-300"
+                                            >
+                        {tag}
+                      </span>
+                                        ))}
+                                    </div>
+
+                                    <div className="flex gap-3">
+                                        <a
+                                            href={project.github}
+                                            className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+                                        >
+                                            <Github className="w-4 h-4" />
+                                            Code
+                                        </a>
+                                        <a
+                                            href={project.demo}
+                                            className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+                                        >
+                                            <ExternalLink className="w-4 h-4" />
+                                            Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Navigation Dots */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === activeIndex
-                    ? 'bg-white w-6'
-                    : 'bg-white/30 hover:bg-white/50'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* View All Projects CTA */}
-        <div className="text-center mt-12">
-          <Button
-            variant="outline"
-            className="group border-white/30 text-white hover:bg-white/10 px-8 py-6"
-          >
-            View All Projects
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform" />
-          </Button>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Projects;
+            </div>
+        </section>
+    );
+}

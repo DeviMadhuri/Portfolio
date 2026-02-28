@@ -1,256 +1,153 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Building2, GraduationCap, MapPin, Calendar, CheckCircle2 } from 'lucide-react';
+import { Briefcase, GraduationCap } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const experiences = [
-  {
-    id: 1,
-    type: 'work',
-    title: 'AWS Data Engineer',
-    company: 'State Farm',
-    location: 'Chicago,IL',
-    duration: '2024 - Present',
-    description: 'Lead data engineering initiatives for enterprise analytics platform. Design and implement scalable ETL pipelines processing terabytes of data daily.',
-    achievements: [
-      'Built cloud-native data platform serving 500+ users',
-      'Reduced data processing costs by 40%',
-      'Implemented real-time streaming architecture',
-      'Mentored junior engineers and established best practices',
-    ],
-    icon: Building2,
-  },
-  {
-    id: 2,
-    type: 'work',
-    title: 'Data Engineer',
-    company: 'Bank of America',
-    location: 'United States',
-    duration: '2023 - 2024',
-    description: 'Developed batch processing pipelines and data warehouse solutions. Collaborated with analytics teams to deliver business intelligence platforms.',
-    achievements: [
-      'Migrated legacy pipelines to cloud infrastructure',
-      'Improved data quality by 95%',
-      'Built automated monitoring and alerting systems',
-    ],
-    icon: Building2,
-  },
-  {
-    id: 3,
-    type: 'education',
-    title: "Masters's in Computer Information Systems",
-    company: 'New England College',
-    location: 'United States',
-    duration: '2022 - 2023',
-    description: 'Specialized in database systems, cloud-based application development, and enterprise information systems.',
-    achievements: [
-      'Designed and implemented relational database schemas using MySQL and PostgreSQL',
-      'Built backend applications using Python and PHP with database-driven architectures',
-      'Applied cloud computing concepts to deploy and manage scalable applications'
-    ],
-    icon: GraduationCap,
-  },
-];
+export function Experience() {
+    const sectionRef = useRef<HTMLDivElement>(null);
 
-const Experience = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const timelineRef = useRef<HTMLDivElement>(null);
-  const lineRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.from('.timeline-item', {
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top 80%',
+                },
+                x: -50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.3
+            });
+        }, sectionRef);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Title animation
-      gsap.fromTo(
-        titleRef.current,
-        { y: 30, opacity: 0 },
+        return () => ctx.revert();
+    }, []);
+
+    const experiences = [
         {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // Timeline line draw
-      gsap.fromTo(
-        lineRef.current,
-        { scaleY: 0 },
+            type: 'work',
+            title: 'Senior AWS Data Engineer',
+            company: 'State Farm',
+            location: 'Chicago, IL',
+            period: 'July 2024 – Present',
+            points: [
+                'Built ETL pipelines processing 2+TB daily using AWS Glue, Lambda, PySpark, cutting runtime by 30%',
+                'Implemented RAG pipeline on Amazon Bedrock & SageMaker for real-time context-aware insights',
+                'Migrated S3 to Apache Iceberg tables with Starburst query engine (20% faster cross-source queries)',
+                'Built data quality layer using Great Expectations with lineage tracking and Splunk alerting',
+                'Managed infrastructure with Terraform/OpenTofu including SQS error queues and automated alerting',
+                'Wrote dbt models reducing ad-hoc SQL requests by 40%',
+                'Set up S3 lifecycle policies reducing storage costs by 20%'
+            ],
+            skills: ['AWS Glue', 'PySpark', 'Bedrock', 'Iceberg', 'dbt', 'Terraform']
+        },
         {
-          scaleY: 1,
-          duration: 1,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: timelineRef.current,
-            start: 'top 70%',
-            toggleActions: 'play none none reverse',
-          },
+            type: 'work',
+            title: 'Python Data Engineer',
+            company: 'Bank of America',
+            location: 'Hartford, CT',
+            period: 'August 2022 – June 2024',
+            points: [
+                'Built batch & streaming pipelines using Python, Spark, Kafka for 10+ downstream teams',
+                'Implemented Delta Lake on Databricks for ACID-compliant, versioned storage',
+                'Set up CI/CD for ML deployments using Docker, Kubernetes, Jenkins (40% faster deployments)',
+                'Tuned Spark jobs via partition pruning & broadcast joins (35% runtime reduction)',
+                'Managed Airflow for 15+ daily pipeline runs with SLA alerting',
+                'Built Flask REST APIs serving data to Tableau dashboards'
+            ],
+            skills: ['Python', 'Spark', 'Airflow', 'Delta Lake', 'Docker', 'Kubernetes']
+        },
+        {
+            type: 'work',
+            title: 'AWS Data Engineer / Python Developer',
+            company: 'Dentsu',
+            location: 'India',
+            period: '2020 – December 2021',
+            points: [
+                'Built ETL pipelines integrating 20+ sources using Python, PySpark, AWS Glue, EMR',
+                'Improved ETL throughput by 25% via Glue/EMR optimizations',
+                'Migrated SQL Server to Redshift improving query speed by 30%',
+                'Set up CloudTrail/CloudWatch monitoring with real-time alerting',
+                'Built REST APIs using Flask, Django, React, Node.js'
+            ],
+            skills: ['AWS', 'Python', 'React', 'Step Functions', 'Redshift']
+        },
+        {
+            type: 'education',
+            title: "Master's in Computer Information Systems",
+            company: 'New England College',
+            location: 'Henniker, NH',
+            period: 'May 2023',
+            points: ['GPA: 3.95/4.0', 'Specialized in database systems and cloud computing'],
+            skills: []
         }
-      );
+    ];
 
-      // Experience entries
-      if (timelineRef.current) {
-        const entries = timelineRef.current.querySelectorAll('.experience-entry');
-        entries.forEach((entry, index) => {
-          const isLeft = index % 2 === 0;
-          gsap.fromTo(
-            entry,
-            { x: isLeft ? -100 : 100, opacity: 0 },
-            {
-              x: 0,
-              opacity: 1,
-              duration: 0.6,
-              ease: 'expo.out',
-              scrollTrigger: {
-                trigger: entry,
-                start: 'top 80%',
-                toggleActions: 'play none none reverse',
-              },
-            }
-          );
-        });
-
-        // Branch connectors
-        const branches = timelineRef.current.querySelectorAll('.branch-connector');
-        gsap.fromTo(
-          branches,
-          { scaleX: 0 },
-          {
-            scaleX: 1,
-            duration: 0.4,
-            stagger: 0.2,
-            ease: 'smooth',
-            scrollTrigger: {
-              trigger: timelineRef.current,
-              start: 'top 60%',
-              toggleActions: 'play none none reverse',
-            },
-          }
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  return (
-    <section
-      ref={sectionRef}
-      id="experience"
-      className="relative min-h-screen w-full py-24 overflow-hidden"
-    >
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2
-            ref={titleRef}
-            className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-4"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-          >
-            Professional Journey
-          </h2>
-          <p className="text-gray-500 text-lg">My Career Path in Data Engineering</p>
-        </div>
-
-        {/* Timeline */}
-        <div ref={timelineRef} className="relative">
-          {/* Center Line */}
-          <div
-            ref={lineRef}
-            className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-white/30 via-white/20 to-transparent origin-top"
-          />
-
-          {/* Timeline Entries */}
-          <div className="space-y-12">
-            {experiences.map((exp, index) => {
-              const isLeft = index % 2 === 0;
-              return (
-                <div
-                  key={exp.id}
-                  className={`experience-entry relative flex items-start gap-8 ${
-                    isLeft ? 'sm:flex-row' : 'sm:flex-row-reverse'
-                  }`}
-                >
-                  {/* Timeline Dot */}
-                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#010101] z-10 mt-6">
-                    <div className="absolute inset-0 rounded-full bg-white animate-pulse-glow" />
-                  </div>
-
-                  {/* Branch Connector */}
-                  <div
-                    className={`branch-connector hidden sm:block absolute top-8 ${
-                      isLeft
-                        ? 'left-1/2 w-[calc(50%-2rem)] origin-left'
-                        : 'right-1/2 w-[calc(50%-2rem)] origin-right'
-                    } h-px bg-white/20`}
-                  />
-
-                  {/* Content Card */}
-                  <div
-                    className={`ml-12 sm:ml-0 sm:w-[calc(50%-3rem)] ${
-                      isLeft ? 'sm:pr-0 sm:mr-auto' : 'sm:pl-0 sm:ml-auto'
-                    }`}
-                  >
-                    <div className="glass rounded-2xl p-6 hover:bg-white/10 transition-all duration-500 group">
-                      {/* Header */}
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
-                          <exp.icon className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-medium text-white mb-1">
-                            {exp.title}
-                          </h3>
-                          <p className="text-gray-400">{exp.company}</p>
-                        </div>
-                      </div>
-
-                      {/* Meta Info */}
-                      <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-500">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {exp.duration}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {exp.location}
-                        </span>
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                        {exp.description}
-                      </p>
-
-                      {/* Achievements */}
-                      <ul className="space-y-2">
-                        {exp.achievements.map((achievement, i) => (
-                          <li
-                            key={i}
-                            className="flex items-start gap-2 text-sm text-gray-500"
-                          >
-                            <CheckCircle2 className="w-4 h-4 text-white/50 mt-0.5 flex-shrink-0" />
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
+    return (
+        <section ref={sectionRef} id="experience" className="py-32 bg-slate-950 relative">
+            <div className="container mx-auto px-4">
+                <div className="max-w-4xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-sm font-semibold text-indigo-500 uppercase tracking-wider mb-4">
+                            Career Path
+                        </h2>
+                        <h3 className="text-4xl font-bold text-white">Professional Journey</h3>
                     </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
-export default Experience;
+                    <div className="relative">
+                        <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500 via-purple-500 to-transparent hidden md:block" />
+
+                        {experiences.map((exp, index) => (
+                            <div key={index} className="timeline-item relative md:pl-24 mb-12 last:mb-0">
+                                <div className="hidden md:flex absolute left-6 top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-indigo-500 items-center justify-center">
+                                    {exp.type === 'education' ? (
+                                        <GraduationCap className="w-3 h-3 text-indigo-400" />
+                                    ) : (
+                                        <Briefcase className="w-3 h-3 text-indigo-400" />
+                                    )}
+                                </div>
+
+                                <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-indigo-500/30 transition-all">
+                                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                                        <div>
+                                            <h4 className="text-xl font-bold text-white">{exp.title}</h4>
+                                            <p className="text-indigo-400 font-medium">{exp.company}</p>
+                                        </div>
+                                        <div className="text-right mt-2 md:mt-0">
+                                            <span className="text-sm text-slate-400">{exp.period}</span>
+                                            <p className="text-sm text-slate-500">{exp.location}</p>
+                                        </div>
+                                    </div>
+
+                                    <ul className="space-y-2 mb-4">
+                                        {exp.points.map((point, i) => (
+                                            <li key={i} className="text-slate-400 text-sm flex items-start">
+                                                <span className="text-indigo-500 mr-2">•</span>
+                                                {point}
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    {exp.skills.length > 0 && (
+                                        <div className="flex flex-wrap gap-2">
+                                            {exp.skills.map((skill, i) => (
+                                                <span
+                                                    key={i}
+                                                    className="px-3 py-1 rounded-full text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20"
+                                                >
+                          {skill}
+                        </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
