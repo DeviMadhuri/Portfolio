@@ -9,7 +9,7 @@ import { Skills } from './sections/Skills';
 import { Experience } from './sections/Experience';
 import Hobbies from './sections/Hobbies';
 import { Contact } from './sections/Contact';
-import { Footer } from './sections/Footer';
+import Footer from './sections/Footer';
 import './App.css';
 
 // Register GSAP plugins
