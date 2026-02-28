@@ -91,23 +91,16 @@ export function Hero() {
 
                             {/* Image container */}
                             <div className="relative bg-slate-900 rounded-3xl p-3 h-full border border-slate-800 shadow-2xl">
-                                {/* REPLACE 'profile.jpg' WITH YOUR ACTUAL FILENAME */}
+                                {/* CHANGE THIS FILENAME TO MATCH YOUR ACTUAL IMAGE */}
                                 <img
-                                    src="{`${import.meta.env.BASE_URL}profile.jpg`}
+                                    src="/profile.jpg"
                                     alt="Devi Madhuri"
                                     className="w-full h-full object-cover rounded-2xl"
                                     onError={(e) => {
                                         console.error("Profile image failed to load");
                                         e.currentTarget.style.display = 'none';
-                                        // Show fallback
-                                        const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                                        if (fallback) fallback.style.display = 'flex';
                                     }}
                                 />
-                                {/* Fallback initials (hidden by default) */}
-                                <div className="hidden w-full h-full rounded-2xl bg-slate-800 items-center justify-center text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400 absolute inset-0 m-3" style={{width: 'calc(100% - 24px)', height: 'calc(100% - 24px)'}}>
-                                    DM
-                                </div>
 
                                 {/* Floating badge - AWS */}
                                 <div className="absolute -bottom-4 -left-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-indigo-500/30 shadow-xl">
@@ -123,27 +116,4 @@ export function Hero() {
                                 </div>
 
                                 {/* Floating badge - Gen AI */}
-                                <div className="absolute -top-4 -right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-purple-500/30 shadow-xl">
-                                    <div className="flex items-center space-x-3">
-                                        <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                                            <i className="fas fa-brain text-blue-400 text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <div className="text-sm font-semibold text-white">Gen AI</div>
-                                            <div className="text-xs text-slate-400">RAG Systems</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
-                <ArrowDown className="w-6 h-6 text-slate-600" />
-            </div>
-        </section>
-    );
-}
+                                <div className="absolute -top-4 -right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-purple-500
