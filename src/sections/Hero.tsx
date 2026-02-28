@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ArrowDown, Download, Github, Linkedin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '../components/ui/button';
 
 export function Hero() {
     const heroRef = useRef<HTMLDivElement>(null);
