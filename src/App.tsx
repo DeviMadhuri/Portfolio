@@ -4,40 +4,31 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
-import { Projects } from './sections/Projects';
 import { Skills } from './sections/Skills';
+import { Projects } from './sections/Projects';
 import { Experience } from './sections/Experience';
 import Hobbies from './sections/Hobbies';
 import { Contact } from './sections/Contact';
-import Footer from './sections/Footer';
-import './App.css';
+import { Footer } from './sections/Footer';
 
-// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
     useEffect(() => {
-        // Configure ScrollTrigger defaults
-        ScrollTrigger.defaults({
-            toggleActions: 'play none none reverse',
-        });
-
-        // Refresh ScrollTrigger on load
-        ScrollTrigger.refresh();
-
+        document.documentElement.style.scrollBehavior = 'smooth';
         return () => {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+            document.documentElement.style.scrollBehavior = 'auto';
         };
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#010101] text-white overflow-x-hidden">
+        <div className="bg-slate-950 min-h-screen text-slate-200 selection:bg-indigo-500/30">
             <Navigation />
             <main>
                 <Hero />
                 <About />
-                <Projects />
                 <Skills />
+                <Projects />
                 <Experience />
                 <Hobbies />
                 <Contact />
