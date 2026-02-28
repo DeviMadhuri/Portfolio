@@ -93,7 +93,7 @@ export function Hero() {
                             <div className="relative bg-slate-900 rounded-3xl p-3 h-full border border-slate-800 shadow-2xl">
                                 {/* REPLACE 'profile.jpg' WITH YOUR ACTUAL FILENAME */}
                                 <img
-                                    src="/profile-pic.jpg"
+                                    src="{`${import.meta.env.BASE_URL}profile.jpg`}
                                     alt="Devi Madhuri"
                                     className="w-full h-full object-cover rounded-2xl"
                                     onError={(e) => {
