@@ -7,7 +7,6 @@ import {
     Code2,
     Container,
     Workflow,
-    LineChart,
     Brain,
     Shield,
     Server
