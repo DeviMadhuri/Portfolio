@@ -1,13 +1,13 @@
-import path from "path";
-import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
     plugins: [react()],
-    base: '/Portfolio/', // Important for GitHub Pages
+    base: '/Portfolio/',  // Must match your repo name
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "./src"),
         },
     },
-});
+})

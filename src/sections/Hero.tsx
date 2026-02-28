@@ -73,7 +73,20 @@ export function Hero() {
                             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-3xl rotate-6 opacity-30 blur-2xl"></div>
 
                             <div className="relative bg-slate-900 rounded-3xl p-3 h-full border border-slate-800 shadow-2xl">
-                                <img src="/profile-pic.jpg" alt="Devi Madhuri" className="w-full h-full object-cover rounded-2xl" />
+                                <img
+                                    src="/Portfolio/profile-pic.jpg"
+                                    alt="Devi Madhuri"
+                                    className="w-full h-full object-cover rounded-2xl"
+                                    onError={(e) => {
+                                        e.currentTarget.style.display = 'none';
+                                        const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                                        if (fallback) fallback.style.display = 'flex';
+                                    }}
+                                />
+
+                                <div className="hidden w-full h-full rounded-2xl bg-slate-800 flex-col items-center justify-center absolute inset-0">
+                                    <span className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">DM</span>
+                                </div>
 
                                 <div className="absolute -bottom-4 -left-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-indigo-500/30 shadow-xl">
                                     <div className="flex items-center space-x-3">
