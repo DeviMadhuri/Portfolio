@@ -57,9 +57,6 @@ export function About() {
                             <h2 className="text-sm font-semibold text-indigo-500 uppercase tracking-wider mb-4">
                                 About Me
                             </h2>
-                            <h3 className="text-4xl font-bold mb-6 text-white">
-                                The Engineer Behind<br />the Data
-                            </h3>
                             <div className="space-y-4 text-slate-400 text-lg">
                                 <p>
                                     I'm Devi Madhuri, a Senior AWS Data Engineer with 6 years of experience designing and operating large-scale data platforms. I specialize in building resilient ETL pipelines, cloud-native data architectures, and Gen AI solutions using AWS Bedrock and SageMaker.
