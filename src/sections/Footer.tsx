@@ -1,6 +1,6 @@
 import { Github, Linkedin, Heart } from 'lucide-react';
 
-export default function Footer() {
+export function Footer() {
     return (
         <footer className="py-8 bg-slate-950 border-t border-slate-900">
             <div className="container mx-auto px-4">
