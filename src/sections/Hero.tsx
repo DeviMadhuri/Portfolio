@@ -25,8 +25,6 @@ export function Hero() {
             <div className="pointer-events-none absolute inset-0">
                 <div className="absolute -left-20 top-10 w-72 h-72 rounded-full bg-cyan-400/15 blur-3xl" />
                 <div className="absolute right-8 top-28 w-64 h-64 rounded-full bg-fuchsia-500/15 blur-3xl" />
-                <div className="absolute left-1/2 top-1/4 w-80 h-80 -translate-x-1/2 rounded-full bg-[url('art-1.jpg')] bg-cover bg-center opacity-20 blur-xl" />
-                <div className="absolute right-0 bottom-12 w-72 h-72 rounded-3xl bg-[url('art-2.jpg')] bg-cover bg-center opacity-20 blur-2xl" />
             </div>
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto text-center hero-content">

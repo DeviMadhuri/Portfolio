@@ -30,7 +30,7 @@ export function Navigation() {
               <a key={link.href} href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">{link.label}</a>
             ))}
             <Button size="sm" className="bg-indigo-600 hover:bg-indigo-700 text-white" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              Hire Me
+              Connect
             </Button>
           </div>
           <button className="md:hidden text-slate-400 hover:text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
