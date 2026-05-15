@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
-import { Skills } from './sections/Skills';
 import { Projects } from './sections/Projects';
 import { Experience } from './sections/Experience';
 import Hobbies from './sections/Hobbies';
@@ -28,7 +27,6 @@ function App() {
                 <Hero />
                 <About />
                 <Projects />
-                <Skills />
                 <Experience />
                 <Hobbies />
                 <Contact />

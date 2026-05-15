@@ -55,26 +55,6 @@ export function Skills() {
             icon: Workflow,
             title: 'Orchestration',
             skills: ['Apache Airflow', 'dbt', 'Great Expectations', 'Step Functions', 'Data Lineage']
-        },
-        {
-            icon: Container,
-            title: 'Infrastructure',
-            skills: ['Terraform', 'OpenTofu', 'Docker', 'Kubernetes', 'Jenkins', 'GitHub Actions']
-        },
-        {
-            icon: Shield,
-            title: 'Data Governance',
-            skills: ['Data Quality', 'Lineage', 'Stewardship', 'Monitoring', 'Compliance']
-        },
-        {
-            icon: Code2,
-            title: 'Languages',
-            skills: ['Python', 'SQL', 'Scala', 'Java', 'JavaScript', 'Bash']
-        },
-        {
-            icon: Server,
-            title: 'Databases',
-            skills: ['Redshift', 'Snowflake', 'PostgreSQL', 'MySQL', 'SQL Server', 'DynamoDB']
         }
     ];
 
@@ -82,16 +62,7 @@ export function Skills() {
         <section ref={sectionRef} id="skills" className="py-24 md:py-32 bg-slate-950 border-y border-slate-900">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-12 md:mb-16">
-                        <h2 className="text-sm font-semibold text-indigo-500 uppercase tracking-wider mb-4">
-                            Technical Expertise
-                        </h2>
-                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                            Tools & Technologies
-                        </h3>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                         {skillCategories.map((category, index) => (
                             <div
                                 key={index}
@@ -115,22 +86,22 @@ export function Skills() {
                         ))}
                     </div>
 
-                    {/* Certifications */}
-                    <div className="mt-12 md:mt-16 flex flex-wrap justify-center gap-3 md:gap-4">
-                        {[
-                            'AWS Developer Associate (2025)',
-                            'AWS Cloud Practitioner',
-                            'HackerRank SQL (Advanced)',
-                            'HackerRank Python'
-                        ].map((cert, i) => (
-                            <div
-                                key={i}
-                                className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-sm text-slate-400"
-                            >
-                                <div className="w-2 h-2 rounded-full bg-indigo-500" />
-                                {cert}
-                            </div>
-                        ))}
+                    <div className="mt-8 md:mt-10">
+                        <h3 className="text-2xl font-bold text-white text-center mb-4">Certifications</h3>
+                        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+                            {[
+                                'AWS Developer Associate (2025)',
+                                'AWS Cloud Practitioner'
+                            ].map((cert, i) => (
+                                <div
+                                    key={i}
+                                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-sm text-indigo-300 font-medium"
+                                >
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500" />
+                                    {cert}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

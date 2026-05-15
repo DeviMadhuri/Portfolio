@@ -1,4 +1,4 @@
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Send } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
@@ -43,11 +43,20 @@ export function Contact() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
-                    <Send className="w-5 h-5" />
+                    <Github className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-sm text-slate-500">Phone</div>
-                    <div className="text-white">779-758-5823</div>
+                    <div className="text-sm text-slate-500">GitHub</div>
+                    <a href="https://github.com/DeviMadhuri" target="_blank" rel="noopener noreferrer" className="text-white hover:text-indigo-400 transition-colors">github.com/DeviMadhuri</a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                    <Linkedin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-slate-500">LinkedIn</div>
+                    <a href="https://linkedin.com/in/devi-madhuri1205" target="_blank" rel="noopener noreferrer" className="text-white hover:text-indigo-400 transition-colors">linkedin.com/in/devi-madhuri1205</a>
                   </div>
                 </div>
               </div>
