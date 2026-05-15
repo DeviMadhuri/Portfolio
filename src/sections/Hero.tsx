@@ -22,6 +22,12 @@ export function Hero() {
     return (
         <section ref={heroRef} id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950 to-slate-950" />
+            <div className="pointer-events-none absolute inset-0">
+                <div className="absolute -left-20 top-10 w-72 h-72 rounded-full bg-cyan-400/15 blur-3xl" />
+                <div className="absolute right-8 top-28 w-64 h-64 rounded-full bg-fuchsia-500/15 blur-3xl" />
+                <div className="absolute left-1/2 top-1/4 w-80 h-80 -translate-x-1/2 rounded-full bg-[url('art-1.jpg')] bg-cover bg-center opacity-20 blur-xl" />
+                <div className="absolute right-0 bottom-12 w-72 h-72 rounded-3xl bg-[url('art-2.jpg')] bg-cover bg-center opacity-20 blur-2xl" />
+            </div>
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto text-center hero-content">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
@@ -33,7 +39,7 @@ export function Hero() {
                     </h1>
                     <p className="text-xl text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
                         Data engineer with 5+ years building production-grade ETL/ELT pipelines, cloud data platforms, and RAG systems.
-                        Experienced in AWS/GCP, Python, PySpark, dbt, Terraform, and reliable enterprise data governance.
+                        Experienced in AWS/Azure, Python, PySpark, dbt, Terraform, and reliable enterprise data governance.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mb-12">
                         <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8">

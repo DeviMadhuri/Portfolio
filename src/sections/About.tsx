@@ -60,7 +60,7 @@ export function About() {
                             <div className="space-y-4 text-slate-400 text-lg">
                                 <p>
                                     I'm Devi Madhuri, a data engineer with 5+ years of experience building and maintaining production-grade ETL/ELT pipelines and cloud data platforms.
-                                    I work across financial services and insurance, delivering scalable AWS and GCP solutions that prioritize data quality, governance, and compliance.
+                                    I work across financial services and insurance, delivering scalable AWS and Azure solutions that prioritize data quality, governance, and compliance.
                                 </p>
                                 <p>
                                     I focus on master data management, data lineage, validation rules and observability, while also building Gen AI and RAG systems using LangChain, OpenAI, and vector databases.
@@ -68,17 +68,19 @@ export function About() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4">
-                            {highlights.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="about-card p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-indigo-500/30 transition-all group"
-                                >
-                                    <item.icon className="w-8 h-8 text-indigo-400 mb-4 group-hover:scale-110 transition-transform" />
-                                    <h4 className="font-semibold text-white mb-2">{item.title}</h4>
-                                    <p className="text-sm text-slate-400">{item.desc}</p>
+                        <div className="grid gap-4">
+                            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl bg-slate-950/70">
+                                <img src="/art-3.jpg" alt="Art accent" className="w-full h-[340px] object-cover transition-transform duration-700 hover:scale-105" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70">
+                                    <img src="/art-4.jpg" alt="Art accent" className="w-full h-40 object-cover transition-transform duration-700 hover:scale-105" />
                                 </div>
-                            ))}
+                                <div className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70">
+                                    <img src="/art-5.jpg" alt="Art accent" className="w-full h-40 object-cover transition-transform duration-700 hover:scale-105" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
