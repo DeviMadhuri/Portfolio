@@ -6,7 +6,7 @@ export function Footer() {
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="text-slate-500 text-sm">
-                        © 2024 Devi Madhuri. Senior AWS Data Engineer.
+                        © 2026 Devi Madhuri. Data Engineer.
                     </div>
 
                     <div className="flex items-center gap-6">

@@ -32,16 +32,15 @@ export function Hero() {
                         Data Engineer
                     </h1>
                     <p className="text-xl text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-                        Currently working on RAG (Retrieval-Augmented Generation) projects and exploring Gen AI solutions.
-                        Building scalable data pipelines and always learning new technologies.
+                        Data engineer with 5+ years building production-grade ETL/ELT pipelines, cloud data platforms, and RAG systems.
+                        Experienced in AWS/GCP, Python, PySpark, dbt, Terraform, and reliable enterprise data governance.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mb-12">
                         <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8">
                             <a href="#projects">View Projects</a>
                         </Button>
                         <Button size="lg" variant="outline" className="border-slate-700 hover:bg-slate-800">
-                            <Download className="mr-2 h-4 w-4" />
-                            <a href="/DEVI_MADHURI_Resume.pdf" download>Download Resume</a>
+                            <a href="#contact">Contact Me</a>
                         </Button>
                     </div>
                     <div className="flex justify-center gap-4">

@@ -41,6 +41,15 @@ export function Contact() {
                     <div className="text-white">Chicago, IL</div>
                   </div>
                 </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                    <Send className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-slate-500">Phone</div>
+                    <div className="text-white">779-758-5823</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">

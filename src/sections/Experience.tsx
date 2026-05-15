@@ -28,59 +28,59 @@ export function Experience() {
     const experiences = [
         {
             type: 'work',
-            title: 'Senior AWS Data Engineer',
+            title: 'AWS Data Engineer',
             company: 'State Farm',
             location: 'Chicago, IL',
             period: 'July 2024 – Present',
             points: [
-                'Built ETL pipelines processing 2+TB daily using AWS Glue, Lambda, PySpark, cutting runtime by 30%',
-                'Implemented RAG pipeline on Amazon Bedrock & SageMaker for real-time context-aware insights',
-                'Migrated S3 to Apache Iceberg tables with Starburst query engine (20% faster cross-source queries)',
-                'Built data quality layer using Great Expectations with lineage tracking and Splunk alerting',
-                'Managed infrastructure with Terraform/OpenTofu including SQS error queues and automated alerting',
-                'Wrote dbt models reducing ad-hoc SQL requests by 40%',
-                'Set up S3 lifecycle policies reducing storage costs by 20%'
+                'Led development of ETL/ELT solutions aligned with master data management strategy, processing 2+ TB of P&C insurance data daily across Auto, Home, and Umbrella.',
+                'Designed data quality frameworks with lineage tracking, validation rules, and monitoring to support 10+ downstream teams.',
+                'Built production pipelines using AWS Glue, EMR, PySpark, Python, and SQL, reducing runtime by 30% through partitioning and parallel execution.',
+                'Implemented CI/CD pipelines with GitLab and Jenkins for automated deployment of data solutions.',
+                'Managed Terraform infrastructure for pipeline components, error handling, and monitoring, and integrated Splunk to reduce incident response time by 35%.',
+                'Provided technical guidance on data architecture and solution design while ensuring enterprise governance compliance.'
             ],
-            skills: ['AWS Glue', 'PySpark', 'Bedrock', 'Iceberg', 'dbt', 'Terraform']
+            skills: ['AWS Glue', 'PySpark', 'Terraform', 'GitLab', 'Jenkins', 'Splunk']
         },
         {
             type: 'work',
-            title: 'Python Data Engineer',
+            title: 'Data Engineer',
             company: 'Bank of America',
             location: 'Hartford, CT',
             period: 'August 2022 – June 2024',
             points: [
-                'Built batch & streaming pipelines using Python, Spark, Kafka for 10+ downstream teams',
-                'Implemented Delta Lake on Databricks for ACID-compliant, versioned storage',
-                'Set up CI/CD for ML deployments using Docker, Kubernetes, Jenkins (40% faster deployments)',
-                'Tuned Spark jobs via partition pruning & broadcast joins (35% runtime reduction)',
-                'Managed Airflow for 15+ daily pipeline runs with SLA alerting',
-                'Built Flask REST APIs serving data to Tableau dashboards'
+                'Built data quality frameworks, lineage tracking, validation rules, and automated monitoring for enterprise financial data.',
+                'Developed semantic data models and dbt transformations to centralize master data definitions across reporting pipelines.',
+                'Architected Databricks and Delta Lake solutions for ACID-compliant versioned storage and auditable data management.',
+                'Optimized pipeline performance through SQL tuning, partitioning, and caching, reducing average runtime by 35%.',
+                'Collaborated with compliance, finance, and engineering teams to translate technical architecture into business-aligned data solutions.',
+                'Performed root cause analysis for production issues and escalated critical risks to management for resolution.'
             ],
-            skills: ['Python', 'Spark', 'Airflow', 'Delta Lake', 'Docker', 'Kubernetes']
+            skills: ['dbt', 'Databricks', 'Delta Lake', 'SQL', 'Python', 'Airflow']
         },
         {
             type: 'work',
-            title: 'AWS Data Engineer / Python Developer',
+            title: 'Python Developer',
             company: 'Dentsu',
             location: 'India',
-            period: '2020 – December 2021',
+            period: 'August 2020 – December 2021',
             points: [
-                'Built ETL pipelines integrating 20+ sources using Python, PySpark, AWS Glue, EMR',
-                'Improved ETL throughput by 25% via Glue/EMR optimizations',
-                'Migrated SQL Server to Redshift improving query speed by 30%',
-                'Set up CloudTrail/CloudWatch monitoring with real-time alerting',
-                'Built REST APIs using Flask, Django, React, Node.js'
+                'Implemented MLOps best practices using MLflow and Azure ML for model versioning, monitoring, and deployment.',
+                'Built sentiment analysis and predictive models with Python, TensorFlow, and HuggingFace for streaming Kafka and BigQuery data.',
+                'Orchestrated workflows using Apache Airflow to reduce manual intervention and maintain pipeline consistency.',
+                'Developed monitoring dashboards and alerting scripts to shift from reactive to proactive incident response.',
+                'Delivered REST APIs with Flask and Django to provide self-service data access across teams.',
+                'Processed batch data in CSV, JSON, XML, Excel, and Parquet formats and improved pipeline throughput by 25%.'
             ],
-            skills: ['AWS', 'Python', 'React', 'Step Functions', 'Redshift']
+            skills: ['Python', 'Airflow', 'Azure ML', 'Flask', 'Django', 'Kafka']
         },
         {
             type: 'education',
-            title: "Master's in Computer Information Systems",
+            title: "Master's in Computer and Information Systems",
             company: 'New England College',
             location: 'Henniker, NH',
-            period: 'May 2023',
-            points: ['GPA: 3.95/4.0', 'Specialized in database systems and cloud computing'],
+            period: '2023',
+            points: ['GPA: 3.95', 'Focused on database systems, cloud computing, and analytics.'],
             skills: []
         }
     ];

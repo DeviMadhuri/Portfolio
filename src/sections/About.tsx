@@ -59,10 +59,11 @@ export function About() {
                             </h2>
                             <div className="space-y-4 text-slate-400 text-lg">
                                 <p>
-                                    I'm Devi Madhuri, a Senior AWS Data Engineer with 6 years of experience designing and operating large-scale data platforms. I specialize in building resilient ETL pipelines, cloud-native data architectures, and Gen AI solutions using AWS Bedrock and SageMaker.
+                                    I'm Devi Madhuri, a data engineer with 5+ years of experience building and maintaining production-grade ETL/ELT pipelines and cloud data platforms.
+                                    I work across financial services and insurance, delivering scalable AWS and GCP solutions that prioritize data quality, governance, and compliance.
                                 </p>
                                 <p>
-                                    My expertise spans financial services and insurance, with deep experience in regulated environments where data governance, lineage, and pipeline reliability are critical. I believe great data engineering is invisible—when pipelines run flawlessly, insights flow naturally.
+                                    I focus on master data management, data lineage, validation rules and observability, while also building Gen AI and RAG systems using LangChain, OpenAI, and vector databases.
                                 </p>
                             </div>
                         </div>

@@ -38,18 +38,18 @@ export function Skills() {
     const skillCategories = [
         {
             icon: Cloud,
-            title: 'AWS Ecosystem',
-            skills: ['Glue', 'Redshift', 'SageMaker', 'Bedrock', 'Lambda', 'EMR', 'Step Functions', 'S3', 'Kinesis']
+            title: 'AWS & Cloud',
+            skills: ['Glue', 'Redshift', 'SageMaker', 'Bedrock', 'Lambda', 'EMR', 'Step Functions', 'S3', 'Athena']
         },
         {
             icon: Brain,
             title: 'Gen AI & ML',
-            skills: ['Amazon Bedrock', 'SageMaker', 'RAG Systems', 'NLP', 'Python (Boto3)']
+            skills: ['Amazon Bedrock', 'SageMaker', 'LangChain', 'RAG Systems', 'HuggingFace', 'MLflow']
         },
         {
             icon: Database,
             title: 'Data Lakehouse',
-            skills: ['Apache Iceberg', 'Delta Lake', 'Starburst', 'Databricks', 'Hadoop', 'Kafka']
+            skills: ['Apache Iceberg', 'Delta Lake', 'Databricks', 'Starburst', 'Kafka', 'Delta Live Tables']
         },
         {
             icon: Workflow,
@@ -63,18 +63,18 @@ export function Skills() {
         },
         {
             icon: Shield,
-            title: 'Observability',
-            skills: ['Splunk', 'Dynatrace', 'CloudWatch', 'CloudTrail', 'SLA Monitoring']
+            title: 'Data Governance',
+            skills: ['Data Quality', 'Lineage', 'Stewardship', 'Monitoring', 'Compliance']
         },
         {
             icon: Code2,
             title: 'Languages',
-            skills: ['Python', 'SQL', 'Scala', 'Bash', 'Java', 'Node.js']
+            skills: ['Python', 'SQL', 'Scala', 'Java', 'JavaScript', 'Bash']
         },
         {
             icon: Server,
             title: 'Databases',
-            skills: ['Redshift', 'Snowflake', 'PostgreSQL', 'DynamoDB', 'MongoDB', 'Cassandra']
+            skills: ['Redshift', 'Snowflake', 'PostgreSQL', 'MySQL', 'SQL Server', 'DynamoDB']
         }
     ];
 
