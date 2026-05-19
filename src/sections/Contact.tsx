@@ -14,8 +14,9 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-950">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-32 bg-slate-900/30 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-transparent to-purple-500/5 pointer-events-none" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <div>

@@ -3,8 +3,9 @@ import { Button } from '../components/ui/button';
 
 export default function Hobbies() {
   return (
-    <section id="hobbies" className="py-24 bg-slate-950">
-      <div className="container mx-auto px-4 text-center">
+    <section id="hobbies" className="py-24 bg-slate-900/20 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-transparent to-purple-500/5 pointer-events-none" />
+      <div className="container mx-auto px-4 text-center relative z-10">
         <h2 className="text-4xl font-bold text-white mb-6">Hobbies</h2>
         <p className="text-slate-400 mb-8">Beyond code and data</p>
         <div className="grid gap-4 md:grid-cols-3 mb-10">

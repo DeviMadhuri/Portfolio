@@ -73,20 +73,12 @@ export function Experience() {
                 'Processed batch data in CSV, JSON, XML, Excel, and Parquet formats and improved pipeline throughput by 25%.'
             ],
             skills: ['Python', 'Airflow', 'Azure ML', 'Flask', 'Django', 'Kafka']
-        },
-        {
-            type: 'education',
-            title: "Master's in Computer and Information Systems",
-            company: 'New England College',
-            location: 'Henniker, NH',
-            period: '2023',
-            points: ['GPA: 3.95', 'Focused on database systems, cloud computing, and analytics.'],
-            skills: []
         }
     ];
 
     return (
-        <section ref={sectionRef} id="experience" className="py-32 bg-slate-950 relative">
+        <section ref={sectionRef} id="experience" className="py-32 bg-slate-900/20 relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-indigo-500/5 pointer-events-none" />
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">

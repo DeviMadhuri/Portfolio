@@ -27,33 +27,34 @@ export function Hero() {
                 <div className="absolute right-8 top-28 w-64 h-64 rounded-full bg-fuchsia-500/15 blur-3xl" />
             </div>
             <div className="container mx-auto px-4 relative z-10">
-                <div className="max-w-4xl mx-auto text-center hero-content">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
-                        <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                        <span className="text-sm text-indigo-300">Open to opportunities</span>
+                <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    <div className="text-left md:text-left hero-content">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
+                            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                            <span className="text-sm text-indigo-300">Open to opportunities</span>
+                        </div>
+                        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400">
+                            Data Engineer
+                        </h1>
+                        <p className="text-xl text-slate-400 mb-8 leading-relaxed">
+                            Data engineer with 5+ years building production-grade ETL/ELT pipelines, cloud data platforms, and RAG systems.
+                            Experienced in AWS/Azure, Python, PySpark, dbt, Terraform, and reliable enterprise data governance.
+                        </p>
+                        <div className="flex gap-4">
+                            <a href="https://github.com/DeviMadhuri" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-slate-900 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800 transition-all">
+                                <Github className="w-5 h-5 text-slate-400" />
+                            </a>
+                            <a href="https://linkedin.com/in/devi-madhuri1205" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-slate-900 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800 transition-all">
+                                <Linkedin className="w-5 h-5 text-slate-400" />
+                            </a>
+                        </div>
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400">
-                        Data Engineer
-                    </h1>
-                    <p className="text-xl text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-                        Data engineer with 5+ years building production-grade ETL/ELT pipelines, cloud data platforms, and RAG systems.
-                        Experienced in AWS/Azure, Python, PySpark, dbt, Terraform, and reliable enterprise data governance.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4 mb-12">
-                        <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8">
-                            <a href="#projects">View Projects</a>
-                        </Button>
-                        <Button size="lg" variant="outline" className="border-slate-700 hover:bg-slate-800">
-                            <a href="#contact">Contact Me</a>
-                        </Button>
-                    </div>
-                    <div className="flex justify-center gap-4">
-                        <a href="https://github.com/DeviMadhuri" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-slate-900 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800 transition-all">
-                            <Github className="w-5 h-5 text-slate-400" />
-                        </a>
-                        <a href="https://linkedin.com/in/devi-madhuri1205" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-slate-900 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800 transition-all">
-                            <Linkedin className="w-5 h-5 text-slate-400" />
-                        </a>
+
+                    <div className="hidden md:flex justify-center items-center">
+                        <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-indigo-500/30 shadow-2xl bg-slate-950/70">
+                            <img src="Profile-pic.jpg" alt="Profile picture" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950/40" />
+                        </div>
                     </div>
                 </div>
             </div>

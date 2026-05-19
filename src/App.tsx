@@ -4,10 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
-import { Projects } from './sections/Projects';
 import { Experience } from './sections/Experience';
-import Hobbies from './sections/Hobbies';
+import { Education } from './sections/Education';
+import { Projects } from './sections/Projects';
 import { Contact } from './sections/Contact';
+import Hobbies from './sections/Hobbies';
 import { Footer } from './sections/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,8 +27,9 @@ function App() {
             <main>
                 <Hero />
                 <About />
-                <Projects />
                 <Experience />
+                <Education />
+                <Projects />
                 <Hobbies />
                 <Contact />
             </main>
