@@ -79,7 +79,7 @@ export function Skills() {
     {
       name: 'AWS Certified Developer - Associate',
       issued: '2025',
-      link: '#',
+      link: 'https://cp.certmetrics.com/amazon/en/public/verify/credential',
       badgeColor: 'from-indigo-500/20 to-blue-500/20',
       borderColor: 'border-indigo-500/40',
       textColor: 'text-indigo-300'
