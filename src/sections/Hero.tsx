@@ -1,25 +1,8 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ArrowDown, Download, Github, Linkedin } from 'lucide-react';
+import { Download, Github, Linkedin } from 'lucide-react';
 
 export function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.hero-content > *', {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power4.out'
-      });
-    }, heroRef);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={heroRef} id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       <div className="absolute inset-0 bg-slate-950" />
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-20 top-10 w-72 h-72 rounded-full bg-cyan-400/10 blur-3xl" />
@@ -28,23 +11,21 @@ export function Hero() {
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div className="text-left hero-content">
+          <div className="text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-sm text-indigo-300">Open to opportunities</span>
             </div>
-            <p className="text-lg font-medium text-indigo-300 mb-2 tracking-wide">Hi, I'm</p>
-            <h1 className="text-5xl md:text-6xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400">
+            <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400">
               Devi Madhuri
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-300 mb-6">
               Data Engineer
             </h2>
-            <p className="text-xl text-slate-400 mb-8 leading-relaxed">
-              Data engineer with 5+ years building production-grade ETL/ELT pipelines, cloud data platforms, and RAG systems.
-              Experienced in AWS, Python, PySpark, dbt, Terraform, and enterprise data governance.
+            <p className="text-lg text-slate-400 mb-8 leading-relaxed max-w-lg">
+              Building production-grade data pipelines, cloud platforms, and RAG systems on AWS.
             </p>
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="flex flex-wrap gap-4">
               <a
                 href="./Devi_Madhuri_Donthra_Boina.pdf"
                 download="Devi_Madhuri_Resume.pdf"
@@ -63,14 +44,11 @@ export function Hero() {
           </div>
           <div className="hidden md:flex justify-center items-center">
             <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-indigo-500/30 shadow-2xl bg-slate-950/70">
-              <img src="Profile-pic.jpg" alt="Profile picture" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+              <img src="Profile-pic.jpg" alt="Devi Madhuri" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950/40" />
             </div>
           </div>
         </div>
-      </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
-        <ArrowDown className="w-6 h-6 text-slate-600" />
       </div>
     </section>
   );
