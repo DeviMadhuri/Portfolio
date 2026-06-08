@@ -33,12 +33,12 @@ export function Hero() {
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-sm text-indigo-300">Open to opportunities</span>
             </div>
-            <p className="text-lg font-medium text-indigo-300 mb-2 tracking-wide uppercase">Hi, I'm</p>
+            <p className="text-lg font-medium text-indigo-300 mb-2 tracking-wide">Hi, I'm</p>
             <h1 className="text-5xl md:text-6xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400">
               Devi Madhuri
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-300 mb-6">
-              Senior Data Engineer
+              Data Engineer
             </h2>
             <p className="text-xl text-slate-400 mb-8 leading-relaxed">
               Data engineer with 5+ years building production-grade ETL/ELT pipelines, cloud data platforms, and RAG systems.
@@ -46,7 +46,7 @@ export function Hero() {
             </p>
             <div className="flex flex-wrap gap-4 mb-6">
               <a
-                href="/Devi_Madhuri_Donthra_Boina.pdf"
+                href="./Devi_Madhuri_Donthra_Boina.pdf"
                 download="Devi_Madhuri_Resume.pdf"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-all duration-200"
               >
