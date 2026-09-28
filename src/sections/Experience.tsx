@@ -30,8 +30,8 @@ export function Experience() {
             type: 'work',
             title: 'AWS Data Engineer',
             company: 'State Farm',
-            location: 'Chicago, IL',
-            period: 'July 2024 – Present',
+            location: 'Dallas, TX',
+            period: 'July 2024 – July 2026',
             points: [
                 'Led development of ETL/ELT solutions aligned with master data management strategy, processing 2+ TB of P&C insurance data daily across Auto, Home, and Umbrella.',
                 'Designed data quality frameworks with lineage tracking, validation rules, and monitoring to support 10+ downstream teams.',
@@ -129,8 +129,8 @@ export function Experience() {
                                                     key={i}
                                                     className="px-3 py-1 rounded-full text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20"
                                                 >
-                          {skill}
-                        </span>
+                                  {skill}
+                                </span>
                                             ))}
                                         </div>
                                     )}
