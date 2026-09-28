@@ -61,7 +61,7 @@ export function About() {
           <div className="mb-16 about-content">
             <h2 className="text-sm font-semibold text-indigo-500 uppercase tracking-wider mb-6">About Me</h2>
             <p className="text-slate-400 text-lg leading-relaxed max-w-3xl">
-              Data engineer with 5+ years building production-grade ETL/ELT pipelines and cloud data platforms across financial services and insurance.
+              Data engineer with 4+ years building production-grade ETL/ELT pipelines and cloud data platforms across financial services and insurance.
               Focused on data quality, lineage, observability, and Gen AI systems using LangChain, OpenAI, and vector databases.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
