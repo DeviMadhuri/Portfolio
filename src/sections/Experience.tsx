@@ -47,7 +47,7 @@ export function Experience() {
             title: 'Data Engineer',
             company: 'Bank of America',
             location: 'Hartford, CT',
-            period: 'August 2022 – June 2024',
+            period: 'August 2023 – June 2024',
             points: [
                 'Built data quality frameworks, lineage tracking, validation rules, and automated monitoring for enterprise financial data.',
                 'Developed semantic data models and dbt transformations to centralize master data definitions across reporting pipelines.',
