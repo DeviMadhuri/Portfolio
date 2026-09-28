@@ -27,17 +27,17 @@ export function Hero() {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="./Devi_Madhuri_Donthra_Boina.pdf"
+                href="./Devi_Madhuri_Donthra_Boina_Resume.pdf"
                 download="Devi_Madhuri_Resume.pdf"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-all duration-200"
               >
                 <Download className="w-4 h-4" />
                 Download Resume
               </a>
-              <a href="https://github.com/DeviMadhuri" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-slate-900 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800 transition-all">
+              <a href="https://github.com/DeviMadhuri" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-slate-900 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800 transition-colors">
                 <Github className="w-5 h-5 text-slate-400" />
               </a>
-              <a href="https://linkedin.com/in/devi-madhuri1205" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-slate-900 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800 transition-all">
+              <a href="https://linkedin.com/in/devi-madhuri1205" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-slate-900 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800 transition-colors">
                 <Linkedin className="w-5 h-5 text-slate-400" />
               </a>
             </div>
