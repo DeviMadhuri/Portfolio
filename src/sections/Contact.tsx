@@ -39,7 +39,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-500">Location</div>
-                    <div className="text-white">Chicago, IL</div>
+                    <div className="text-white">Dallas, TX</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
